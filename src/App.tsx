@@ -1,112 +1,33 @@
 import "./App.css";
+import image1 from "./image/grape2.jpeg";
+import image2 from "./image/wine.jpeg";
 
 export default function App() {
   return (
     <div>
       <div className="bg-black w-screen h-screen">
         <div className="flex justify-center items-center w-full h-full">
-          <div className="h-[80%] w-[95%] bg-white mb-10 xl:mt-10 rounded-lg xl:w-[80%] xl:h-[65%] " >
-            <div className="w-full h-8 bg-gray-300 rounded-t-lg flex items-center">
-              <div className="w-20 h-8 flex">
-                <div className="ml-4 space-x-2 flex items-center justify-center ">
-                  <div className="rounded-full w-3 h-3 border border-black/40 border-[1.5px]" />
-                  <div className="rounded-full w-3 h-3 border border-black/40 border-[1.5px]" />
-                  <div className="rounded-full w-3 h-3 border border-black/40 border-[1.5px]" />
-                </div>
-              </div>
-              <div className="w-full h-8 flex items-center justify-center">
-                <div className="w-80 rounded-md mr-10 h-5 border border-black/40 border-[1.5px]" />
-              </div>
-            </div>
-            <div className="grid grid-cols-2 w-full h-full">
-              <div className="grid grid-cols-2 w-full h-full">
-                <div className="bg-black text-white pt-2 pl-3 text-lg leading-4">
-                  CHYNDES<br/>
-                  CHANGES<br/>
-                  CHUNDES<br/>
-                  CHANGES<br/>
-                  JULY 4-5
-                </div>
-                <div className="bg-violet-600"></div>
-                <div className="row-span-2 bg-red-600 pt-1 pl-3">
-                  ABOUT<br/>
-                  CONTACT<br/>
-                  VENUES<br/>
-                  FAQ<br/>
-                  PARTNERS
-                </div>
-                <div className="bg-white "></div>
-                <div className="bg-yellow-400 mt-6 pt-1 pl-3">
-                  TICKETS
-                </div>
-              </div>
-              <div className="bg-white grid grid-cols-2 p-3 w-full h-full ">
-                <div className="flex flex-col">
-                  <span className="text-xs mb-2">
-                  SPEAKERS
+          <div className="h-[64.4%] w-full p-1.5 bg-yellow-300 " >
+            <div className="border border-2 border-orange-500 w-full h-full p-4">
+              <div className="w-full h-full border border-2 border-orange-500">
+                <div className="absolute z-10 flex flex-col justify-center items-center left-[12.5rem] top-[18rem]">
+                  <span className="text-center text-white font-semibold text-4xl">
+                    Form 
                   </span>
-                  <div className="text-sm "> 
-                  ABBY GEE<br/>
-                  ALEX YABSLEY<br/>
-                  ALEX ZACCARIA<br/>
-                  ALLEGRA CALDWELL<br/>
-                  BEATRICE<br/>
-                  <span className="bg-violet-600">
-                    BILL WILSON [Us]<br/>
+                  <span className="text-center text-white font-bold text-5xl h-20 w-[20rem] leading-2 flex justify-center items-center bg-pink-900 border border-2 border-pink-700 shadow-lg">
+                    <span>
+                    GRAPE
+                    WINE
+                    </span>
                   </span>
-                  BRIGID DIXON <br/> CARLY JAMES [US] CHERIE HU [US]<br/>
-                  CHRIS MYLRAE<br/>
-                  CHRISTIE MORGAN<br/>
-                  CHRISTOPHER<br/>
-                  MURATORE [US]<br/>
-                  DANIELLE LEVY [Us]<br/>
-                  DAVE "DIZZ1" NORRIS<br/>
-                  DAVID BENGE [NZ]<br/>
-                  DAVID RAY <br/>
-                  GARETH SMITH [US]<br/>
-                  JENN PELLY [USI<br/>
-                  JOSEPH EDWARD<br/>
-                  KEYES [US]<br/>
-                  KAT DOPPER<br/>
-                  KATE DUNCAN<br/>
-                  LORRAE MCKENNA MARIHUZKA<br/>
-                  CORNELIUS<br/>
-                  MARKELL CASEY [US]
-                  </div>
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-xs mb-2">
-                   ARTISTS
-                  </span>
-                  <div className="text-sm "> 
-                  808S AND GREATEST
-                  HITS<br/>
-                  ACTIVITIES OF DAILY
-                  LIVING<br/>
-                  ALEXANDER BIGGS<br/>
-                  ALICE SKYE<br/>
-                  AUSMUTEANTS<br/>
-                  BABY<br/>
-                  BENCH PRESS<br/>
-                  BIRDZ<br/>
-                  BONES AND JONES<br/>
-                  CABLE TIES<br/>
-                  CHAPEL<br/>
-                  CIVIC<br/>
-                  CLEOPOLD<br/>
-                  DARCY BAYLIS<br/>
-                  DARK FAIR<br/>
-                  DIANAS<br/>
-                  DIET<br/>
-                  DRMNGNOW<br/>
-                  EAST BRUNSWICK ALL<br/>
-                  GIRLS CHOIR<br/>
-                  EILISH GILLIGAN<br/>
-                  ELIZABETH<br/>
-                  EVAN KLAR<br/>
-                  EVELYN IDA MORRIS<br/>
-                  FRASER A. GORMAN
-                  </div>
+                <div className="grid grid-cols-2">
+                <div className="bg-orange-200 relative">
+                  <img src={image1} className="w-full h-[24.85rem] object-cover" />
+                </div>
+                <div className="bg-orange-300 relative">
+                  <img src={image2} className="w-full h-[24.85rem] object-cover" />
+                </div>
                 </div>
               </div>
             </div>
