@@ -10,16 +10,23 @@ body {
   border: 1px dashed $borderColor;
   padding: 0.6rem 1rem;
   border-radius: 0.3rem;
+  @content;
 }
 
 .success {
-  @include alert(lightgreen, blue);
+  @include alert(lightgreen, blue) {
+    font-size: 12px;
+  }
 }
 
 .error {
-  @include alert(tomato, black);
+  @include alert(tomato, black) {
+    text-decoration: underline;
+  }
 }
 
 .warning {
-  @include alert(yellow, violet);
+  @include alert(yellow, violet) {
+    text-transform: uppercase;
+  }
 }
