@@ -4,24 +4,22 @@ body {
   padding: 4rem;
 }
 
-%alert {
+@mixin alert($bgColor, $borderColor) {
+  background-color: $bgColor;
   margin: 1rem;
-  border: 1px dashed black;
+  border: 1px dashed $borderColor;
   padding: 0.6rem 1rem;
   border-radius: 0.3rem;
 }
 
 .success {
-  @extend %alert;
-  background-color: lightgreen;
+  @include alert(lightgreen, blue);
 }
 
 .error {
-  @extend %alert;
-  background-color: tomato;
+  @include alert(tomato, black);
 }
 
 .warning {
-  @extend %alert;
-  background-color: yellow;
+  @include alert(yellow, violet);
 }
