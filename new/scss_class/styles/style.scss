@@ -1,49 +1,106 @@
-$breakpoint-sm: 480px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 1024px;
-$breakpoint-xl: 1200px;
-
-@mixin smallDevice {
-  @media screen and (min-width: $breakpoint-sm) {
-    @content;
-  }
-}
-
-@mixin mediumDevice {
-  @media screen and (min-width: $breakpoint-md) {
-    @content;
-  }
-}
-
-@mixin largeDevice {
-  @media screen and (min-width: $breakpoint-lg) {
-    @content;
-  }
-}
-
-@mixin xlDevice {
-  @media screen and (min-width: $breakpoint-xl) {
-    @content;
-  }
-}
+@import "./reset.scss";
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #dce6d1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-  @include smallDevice {
-    background-color: lightgreen;
+.phone {
+  background-color: black;
+  border-radius: 3rem;
+  height: 95%;
+  width: 25vw;
+  padding: 3.1rem 1.2rem;
+  box-sizing: border-box;
+}
+
+.header {
+  // overflow-x: scroll;
+  .header__list {
+    color: white;
+    display: flex;
+    gap: 10px;
+    width: max-content;
+    .header__list-item {
+      border: 1px solid rgba($color: #fff, $alpha: 0.8);
+      padding: 0.5rem;
+      border-radius: 1.5rem;
+    }
+    .header__list-item--inverted {
+      background-color: white;
+      color: black;
+    }
   }
+}
 
-  @include mediumDevice {
-    background-color: lightseagreen;
-  }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin: 20px 0;
 
-  @include largeDevice {
-    background-color: lightcyan;
-  }
+  .cards__card {
+    background-color: white;
+    padding: 0.6rem;
+    border-radius: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    .card__title {
+      font-size: 1.75rem;
+    }
+    .card__footer {
+      font-size: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span {
+        padding: 0.5rem 0.65rem;
+        border-radius: 1rem;
+        border: 1px solid black;
+      }
+      .price {
+        background-color: rgb(255, 221, 44);
+      }
+      .length {
+        background-color: white;
+      }
+    }
+    &:first-child {
+      background-color: #292d33;
+      border: 1px solid white;
+      .card__title {
+        color: white;
+      }
+    }
+    &:nth-child(2) {
+      background-color: #f5f4ef;
+    }
+    &:nth-child(3) {
+      background-color: #f8fcb5;
+    }
+    &:nth-child(4) {
+      background-color: #b19ff6;
+    }
+    &:nth-child(5) {
+      background-color: #fed3d3;
+    }
+    &:nth-child(6) {
+      background-color: #d0fedf;
+    }
+    &:nth-child(3n) {
+      grid-column: span 2;
+    }
+    &:nth-child(even) .price {
+      background-color: rgb(255, 221, 44);
+    }
 
-  @include xlDevice {
-    background-color: lightcoral;
+    &:nth-child(odd) .price {
+      background-color: #e9aefc;
+    }
   }
 }
