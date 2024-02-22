@@ -5,97 +5,227 @@ $breakpoint-md: 768px;
 $breakpoint-lg: 1024px;
 $breakpoint-xl: 1200px;
 
-$accent-color: #d49466;
-$text-color: #f0f4f5;
-
 @mixin respond($breakpoint) {
   @if $breakpoint == small {
     @media screen and (max-width: $breakpoint-md) {
       @content;
     }
   }
+  @if $breakpoint == medium {
+    @media screen and (min-width: $breakpoint-md) {
+      @content;
+    }
+  }
+  @if $breakpoint == large {
+    @media screen and (min-width: $breakpoint-lg) {
+      @content;
+    }
+  }
+  @if $breakpoint == xl {
+    @media screen and (min-width: $breakpoint-xl) {
+      @content;
+    }
+  }
 }
 
 body {
-  background-color: #dce6d1;
+  background-color: white;
   margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-.nav_bar {
-  background-color: #243244;
+.header {
+  height: 10vh;
+  background-color: black;
   color: white;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  box-sizing: border-box;
-  padding: 1rem 0.75rem;
-  padding-right: 5rem;
-
-  @include respond(small) {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-right: 0;
-  }
+  justify-content: space-between;
+  padding: 0rem 1rem;
 
   &__logo {
-    font-size: 1.5rem;
-    color: $text-color;
+    font-size: 2rem;
+    font-weight: 500;
 
-    i {
-      color: $accent-color;
+    & i {
+      color: rgba(244, 36, 36, 0.901);
     }
   }
 
-  &__menu {
-    list-style: none;
+  &__icons {
+    font-size: 1.3rem;
     display: flex;
-    padding-right: 4rem;
+    gap: 1rem;
+  }
+}
 
-    @include respond(small) {
-      // display: none;
-      flex-direction: column;
-      width: 100%;
-      text-align: center;
-      padding-right: 0;
+.player {
+  background-color: black;
+  video {
+    width: 100%;
+    height: calc(100vw * 9 / 16);
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+
+  &__metadata {
+    & ul {
+      display: flex;
+      gap: 0.4rem;
+      color: #085ed4;
+      font-size: 0.8rem;
+    }
+  }
+
+  &__titleAndBtn {
+    padding-top: 1rem;
+    display: flex;
+    gap: 1rem;
+
+    & button {
+      border: none;
+      background-color: inherit;
+      opacity: 0.5;
     }
 
-    li {
-      padding: 1rem 0.75rem;
+    .title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
 
-      &:hover {
-        background-color: $accent-color;
-        border-radius: 0.5rem;
-        transition: all 0.3s ease-in-out;
+  &__views {
+    padding: 0.5rem 0rem;
+    font-size: 0.65rem;
+    opacity: 0.5;
+  }
+
+  &__actions {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    & li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0.6;
+
+      & button {
+        border: none;
+        background-color: inherit;
+        font-size: 1.2rem;
+      }
+
+      & span {
+        font-size: 0.8rem;
+      }
+
+      &:first-child {
+        & button {
+          color: blue;
+        }
       }
     }
   }
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  &__icons {
+  .channel {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid rgba(59, 59, 59, 0.973);
     display: flex;
-    padding-left: 0;
-    list-style: none;
-    color: $text-color;
+    align-items: center;
+    padding: 0.25rem 0rem;
 
-    @include respond(small) {
+    .metadata {
       width: 100%;
-      justify-content: center;
+      display: flex;
+      align-items: center;
+
+      & img {
+        border-radius: 100%;
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+
+      .info {
+        display: flex;
+        gap: 0.3rem;
+
+        .subscribers {
+          font-size: 0.65rem;
+          opacity: 0.5;
+        }
+      }
     }
 
-    li {
-      padding: 1rem 0.75rem;
+    & button {
+      border: none;
+      background-color: inherit;
+      text-transform: uppercase;
+      opacity: 0.65;
     }
   }
+}
 
-  &__toggleBtn {
-    // display: none;
-    position: absolute;
-    right: 2rem;
-    font-size: 1.5rem;
-    color: $accent-color;
+.upNext {
+  padding: 0.15rem 1rem;
+
+  .title {
+    font-size: 0.9rem;
+    opacity: 0.5;
+  }
+
+  & ul {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.5rem;
+    gap: 1rem;
+
+    & li {
+      display: flex;
+      align-items: flex-start;
+
+      & img {
+        width: 35%;
+        height: auto;
+        border-radius: 0.15rem;
+      }
+
+      & button {
+        border: none;
+        background-color: inherit;
+        opacity: 0.7;
+      }
+
+      .info {
+        padding: 0rem 1rem;
+        display: flex;
+        height: 100%;
+        gap: 0.2rem;
+        .title {
+          font-size: 0.98rem;
+          opacity: 0.9;
+        }
+
+        .name {
+          font-size: 0.7rem;
+          opacity: 0.7;
+        }
+
+        .views {
+          font-size: 0.5rem;
+          opacity: 0.6;
+        }
+      }
+    }
   }
 }
