@@ -5,107 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/style.scss" />
     <title>CSS Layout Masterclass</title>
+    <script
+      src="https://kit.fontawesome.com/2d323a629b.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
+
   <body>
-    <div class="phone1">
-      <div class="firstBox">
-        <header class="main_screen__header">
-          <span class="main_screen__header-avatar">😀</span>
-          <span class="main_screen__header-name">Timothy Synder</span>
-          <span class="main_screen__header-menu-bar">🎁</span>
-        </header>
-        <div class="main_screen">
-          <span class="main_screen_screen__title"
-            >The Making Of Modern Ukraine</span
-          >
-          <div class="main_screen-progress">
-            <span class="main_screen-progress-title">In progress</span>
-            <span class="main_screen-progress-value">63%</span>
-
-            <progress
-              class="main_screen-progress-bar"
-              value="63"
-              max="100"
-            ></progress>
-
-            <div class="main_screen-progress-date">
-              <span class="main_screen-progress-date-start">Sep 10 22</span>
-              <span class="main_screen-progress-date-end">Dec 10 22</span>
-            </div>
-          </div>
-          <div class="main_screen-btn">Continue Learning</div>
-        </div>
+    <nav class="nav_bar">
+      <div class="nav_bar__logo">
+        <i class="fab fa-accusoft"></i>
+        <a href="">DreamCoding</a>
       </div>
 
-      <div class="secondBox">
-        <header class="main_screen__header">
-          <span class="main_screen__header-avatar"></span>
-          <span class="main_screen__header-name"></span>
-          <span class="main_screen__header-menu-bar"></span>
-        </header>
-        <div class="free-btn">Free</div>
-      </div>
+      <ul class="nav_bar__menu">
+        <li><a href="">Home</a></li>
+        <li><a href="">Gallery</a></li>
+        <li><a href="">Wedding</a></li>
+        <li><a href="">FAQ</a></li>
+        <li><a href="">Booking</a></li>
+      </ul>
 
-      <div class="float-bar">
-        <div class="home"></div>
-        <div class="search"></div>
-        <div class="profile"></div>
-      </div>
-    </div>
-    <div class="phone2">
-      <header class="header">
-        <ul class="header__list">
-          <li class="header__list-item header__list-item-inverted">All</li>
-          <li class="header__list-item">Advertising</li>
-          <li class="header__list-item">Dev & Research</li>
-          <li class="header__list-item">Goals</li>
-          <li class="header__list-item">iOS Development</li>
-        </ul>
-      </header>
-      <div class="cards">
-        <div class="cards__card">
-          <h2 class="card__title">The Making of Modern Art</h2>
-          <div class="card__footer card__footer-inverted">
-            <span class="progress-price">63%</span>
-            <progress class="progress" value="63" max="100"></progress>
-          </div>
-        </div>
-        <div class="cards__card">
-          <h2 class="card__title">Mobile Interfaces Advanced</h2>
-          <div class="card__footer">
-            <span class="price">Free</span>
-            <span class="length">2</span>
-          </div>
-        </div>
-        <div class="cards__card">
-          <h2 class="card__title">Graphic Design.</h2>
-          <div class="card__footer">
-            <span class="price">$199/month</span>
-            <span class="length">9 months</span>
-          </div>
-        </div>
-        <div class="cards__card">
-          <h2 class="card__title">Web Design Junior</h2>
-          <div class="card__footer">
-            <span class="price">Free</span>
-            <span class="length">3</span>
-          </div>
-        </div>
-        <div class="cards__card">
-          <h2 class="card__title">Inclusive Web Design</h2>
-          <div class="card__footer">
-            <span class="price">$99/mon</span>
-            <span class="length">3</span>
-          </div>
-        </div>
-        <div class="cards__card">
-          <h2 class="card__title">Machine Learning</h2>
-          <div class="card__footer">
-            <span class="price">$199/month</span>
-            <span class="length">9 months</span>
-          </div>
-        </div>
-      </div>
-    </div>
+      <ul class="nav_bar__icons">
+        <li><i class="fab fa-twitter"></i></li>
+        <li><i class="fab fa-facebook-f"></i></li>
+      </ul>
+
+      <a href="#" class="nav_bar__toggleBtn">
+        <i class="fas fa-bars"></i>
+      </a>
+    </nav>
   </body>
 </html>
