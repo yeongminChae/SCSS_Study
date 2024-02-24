@@ -8,132 +8,74 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/styles/style.scss" />
-    <title>Youtube Mobile</title>
+    <title>Scss Practive</title>
     <script
       src="https://kit.fontawesome.com/2d323a629b.js"
       crossorigin="anonymous"
     ></script>
-    <script src="main.js" defer></script>
   </head>
 
   <body>
-    <!-- Header -->
-    <header>
-      <div class="logo">
-        <i class="fab fa-youtube"></i>
-        <span class="title">Youtube</span>
-      </div>
-      <div class="icons">
-        <i class="fas fa-search"></i>
-        <i class="fas fa-ellipsis-v"></i>
-      </div>
-    </header>
+    <div class="phone">
+      <header class="header">
+        <span class="header__btn">←</span>
+        <h1 class="header__title">My Cart</h1>
+        <span class="header__btn">🛒</span>
+      </header>
 
-    <!-- Video Player -->
-    <section class="player">
-      <video controls src="video/video.mp4"></video>
-    </section>
-
-    <!-- Video info & Up next -->
-    <div class="infoAndUpNext">
-      <!-- Video Info -->
-      <section class="info">
-        <!-- Metadata -->
-        <div class="metadata">
-          <ul class="hashtags">
-            <li>#DreamCoding</li>
-            <li>#DreamCoders</li>
-            <li>#Ellie</li>
-          </ul>
-          <div class="titleAndButton">
-            <span class="title clamp"
-              >Clone Coding: Youtube Mobile Website 유튜브 모바일 웹사이트 따라
-              만들기 | 프론트엔드 개발자 입문편: HTML, CSS, Javascript
-              드림코딩과 함께하는 프론트엔드 실전 입문편
-            </span>
-            <button class="moreBtn">
-              <i class="fas fa-caret-down"></i>
-            </button>
-          </div>
-          <span class="views">1M views 1 month ago</span>
-        </div>
-        <!-- Actions buttons -->
-        <ul class="actions">
-          <li>
-            <button>
-              <i class="active fas fa-thumbs-up"></i><span>1K</span>
-            </button>
-          </li>
-          <li>
-            <button><i class="fas fa-thumbs-down"></i><span>0</span></button>
-          </li>
-          <li>
-            <button><i class="fas fa-share"></i><span>Share</span></button>
-          </li>
-          <li>
-            <button><i class="fas fa-plus"></i><span>Save</span></button>
-          </li>
-          <li>
-            <button>
-              <i class="fab fa-font-awesome-flag"></i><span>Report</span>
-            </button>
-          </li>
-        </ul>
-        <!-- Channel description -->
-        <div class="channel">
-          <div class="metadata">
-            <img src="image/swift.png" alt="" />
-            <div class="info">
-              <span class="name">드림코딩 by 엘리</span>
-              <span class="subscribers">1M subcribers</span>
-            </div>
-          </div>
-          <button class="subscribe">subscribe</button>
-        </div>
+      <section class="total">
+        <span class="total__price">$3500</span>
+        <span class="total__subtitles">based on your 5 items</span>
       </section>
 
-      <!-- Up next -->
-      <section class="upNext">
-        <span class="title">Up next</span>
-        <ul>
-          <li class="item">
-            <div class="img"><img src="image/2.png" alt="" /></div>
-            <div class="itemInfo">
-              <span class="title"
-                >프론트엔드 강의, 프론트엔드 개발자가 되고 싶다면? 웹개발
-                입문자편 강의를 시작합니다 ⭐️ (HTML, CSS, Javascript + 실전
-                프로젝트)</span
-              >
-              <span class="name">드림코딩 by 엘리</span>
-              <span class="views">82K views</span>
+      <section class="items">
+        <article class="item">
+          <div class="item__info">
+            <div class="item__info-col">
+              <h2 class="item__title">Pop Temple Print T-Shirt</h2>
+              <h3 class="item__subtitle">versace limited 2002</h3>
             </div>
-            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
-          </li>
-          <li class="item">
-            <div class="img"><img src="image/3.png" alt="" /></div>
-            <div class="itemInfo">
-              <span class="title"
-                >HTML 기초, React 할때 꼭 필요한 팁! 쉽다고 무시하면 안돼요 |
-                프론트엔드 개발자 입문편: HTML, CSS, Javascript</span
-              >
-              <span class="name">드림코딩 by 엘리</span>
-              <span class="views">82K views</span>
+            <div class="item__info-col">
+              <span class="item__total-price">$1990</span>
+              <div class="item__piece-price">$995 per piece</div>
             </div>
-            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
-          </li>
-          <li class="item">
-            <div class="img"><img src="image/2.png" alt="" /></div>
-            <div class="itemInfo">
-              <span class="title"
-                >HTML 태그 완성, 웹 포트폴리오 만들기 전에 꼭 보세요 |
-                프론트엔드 개발자 입문편: HTML, CSS, Javascript</span
-              >
-              <span class="name">드림코딩 by 엘리</span>
-              <span class="views">82K views</span>
+          </div>
+          <div class="item__specs">
+            <div class="spec">
+              <span class="spec__title">Size</span>
+              <div class="spec__value">48 - L</div>
             </div>
-            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
-          </li>
-        </ul>
+            <div class="spec">
+              <span class="spec__title">QT</span>
+              <div class="spec__value">2 pcs</div>
+            </div>
+            <img src="https://source.unsplash.com/random" class="item__photo" />
+          </div>
+        </article>
+
+        <!-- <article class="item">
+          <div class="item__info">
+            <div class="item__info-col">
+              <h2 class="item__title">Pop Temple Print T-Shirt</h2>
+              <h3 class="item__subtitle">limited 2002</h3>
+            </div>
+            <div class="item__info-col">
+              <span class="item__total-price">$1990</span>
+              <div class="item__piece-price">$995 per piece</div>
+            </div>
+            <div class="item__specs">
+              <div class="spec">
+                <span class="spec__title">Size</span>
+                <div class="spec__value">48 - L</div>
+              </div>
+              <div class="spec">
+                <span class="spec__title">QT</span>
+                <div class="spec__value">2 pcs</div>
+              </div>
+            </div>
+            <img src="https://source.unsplash.com/random" class="item__photo" />
+          </div>
+        </article> -->
       </section>
     </div>
   </body>
