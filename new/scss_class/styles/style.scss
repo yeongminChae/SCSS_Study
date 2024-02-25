@@ -4,83 +4,50 @@ $borderColor: rgba(0, 0, 0, 0.4);
 $backgroundColor: #f4f4fc;
 $borderWidth: 2px;
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 body {
-  background-color: $backgroundColor;
-  border: $borderWidth solid $borderColor;
-  height: 80vh;
-  width: 70vw;
-  margin: 10vh auto;
-}
-
-.box {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 10fr;
+  // 만약 아래 이미지에 높이 값을 설정하면 이미지가 늘어나거나 줄어들 때 레이아웃이 깨질 수 있음.
+  // 그리고 이미지 높이에 따라 스크롤을 하는 경우도 발생.
+  // 높이들을 세세하게 설정할 필요가 없음.
 }
 
 .header {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-
-  &__nav {
-    height: 10vh;
-    border-bottom: $borderWidth solid $borderColor;
-
+  .header__nav {
     ul {
       display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      height: 100%;
-      list-style: none;
+      grid-template-columns: repeat(5, 1fr) 1.5fr repeat(5, 1fr);
+      background-color: $borderColor;
+      gap: $borderWidth;
 
-      li {
-        border-right: $borderWidth solid $borderColor;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 0.8rem;
-        font-weight: 500;
-        color: rgba(0, 0, 0, 0.6);
-      }
+      .header__tab {
+        padding: 30px 0;
+        background-color: white;
+        text-align: center;
+        font-weight: 300;
+        font-size: 14px;
 
-      li:last-child {
-        border-right: none;
-      }
-
-      li:last-child,
-      li:nth-child(10),
-      li:first-child {
-        font-size: 1.3rem;
-        font-weight: 500;
-        color: rgba(0, 0, 0, 0.8);
-      }
-
-      li:nth-child(6) {
-        grid-column: 6 / 8;
-        font-size: 1.4rem;
-        font-weight: 500;
-        color: rgba(0, 0, 0, 0.7);
-        letter-spacing: 0.3rem;
+        &:nth-child(6) {
+          font-weight: bold;
+          font-size: 22px;
+          text-transform: uppercase;
+        }
       }
     }
   }
 
-  &__breadcrumbs {
+  .header__breadcrumbs {
     border-bottom: $borderWidth solid $borderColor;
-    padding: 0.3rem 1.2rem;
-    font-size: 0.7rem;
-    font-weight: 500;
-    color: rgba(0, 0, 0, 0.8);
+    border-top: $borderWidth solid $borderColor;
+    padding: 10px 0;
+    padding-left: 50px;
+    font-size: 12px;
 
     .header__crumb {
+      font-weight: 500;
       &:last-child {
-        color: rgba(0, 0, 0, 0.4);
+        opacity: 0.5;
       }
     }
   }
@@ -88,103 +55,89 @@ body {
 
 .product {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  grid-template-rows: repeat(2, 1fr);
-  height: 100%;
+  grid-template-columns: 1fr 1.3fr;
+  background-color: $borderColor;
+  gap: $borderWidth;
 
-  &__img {
-    grid-row: 1 / 3;
-
-    img {
-      width: 100%;
-      height: 100%;
-      max-height: 66.53vh;
-      object-fit: cover;
-      border-right: $borderWidth solid $borderColor;
-      margin: auto;
-    }
+  .product__img {
+    background-image: url("https://source.unsplash.com/random");
+    background-size: cover; // 반복되는 이미지를 제거하기 위해
   }
 
-  &__info {
-    grid-row: 1 / 3;
-    width: 100%;
+  .product__info {
+    display: grid;
+    grid-template-rows: 1.5fr 1fr;
+    gap: $borderWidth;
 
     .product__header {
-      height: 50%;
+      background-color: white;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 0.5rem;
-      border-bottom: $borderWidth solid $borderColor;
-      padding-left: 2rem;
+      padding: 0px 50px;
       font-weight: 500;
-      color: rgba(0, 0, 0, 0.8);
+      text-transform: uppercase;
+      gap: 20px;
 
       .product__category {
-        font-size: 0.9rem;
-        font-weight: 700;
-        color: rgba(0, 0, 0, 0.7);
+        font-size: 22px;
       }
 
-      h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
+      .product__title {
+        font-size: 44px;
       }
 
       .product__add-to-cart {
         display: flex;
-        flex-direction: row;
-        gap: 3rem;
-        font-size: 1.5rem;
-        padding-top: 2rem;
+        gap: 60px;
+        margin-top: 30px;
 
         .product__qty {
+          font-size: 36px;
+          display: flex;
+          gap: 10px;
+
           .product__minus {
-            color: rgba(0, 0, 0, 0.4);
+            opacity: 0.6;
           }
+        }
+
+        .product__price {
+          font-size: 36px;
         }
       }
     }
-    .product__footer {
-      height: 50%;
+  }
+
+  .product__footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $borderWidth;
+
+    & > div {
+      background-color: white;
+    }
+
+    .product__description p {
+      width: 70%;
+      font-size: 14px;
+      padding: 25px 0px;
+      margin: 0 auto;
+    }
+
+    .product__faq {
+      padding: 50px;
       display: flex;
+      flex-direction: column;
+      gap: 20px;
 
-      .product__description {
-        width: 50%;
-        border-right: $borderWidth solid $borderColor;
+      .product__question {
+        border-bottom: $borderWidth solid $borderColor;
         display: flex;
-        flex-direction: column;
-        font-size: 0.8rem;
-        gap: 0.5rem;
-        padding-top: 1rem;
-        font-weight: 500;
-        color: rgba(0, 0, 0, 0.8);
-
-        span,
-        p {
-          width: 80%;
-          margin: 1rem auto 0 auto;
-        }
-      }
-
-      .product__faq {
-        width: 50%;
-        padding-top: 1rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        font-size: 1.1rem;
+        justify-content: space-between;
+        text-transform: uppercase;
         font-weight: 600;
-        color: rgba(0, 0, 0, 0.8);
-
-        .product__question {
-          width: 80%;
-          border-bottom: $borderWidth solid $borderColor;
-          margin: 0 auto;
-          display: flex;
-          justify-content: space-between;
-          padding: 0rem 1rem 0.5rem 1rem;
-        }
+        padding-bottom: 10px;
       }
     }
   }

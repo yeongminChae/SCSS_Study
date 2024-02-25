@@ -16,68 +16,62 @@
   </head>
 
   <body>
-    <div class="box">
-      <header class="header">
-        <nav class="header__nav">
-          <ul>
-            <li class="header__tab">🔥</li>
-            <li class="header__tab">Best Sellers</li>
-            <li class="header__tab">Hand Soap</li>
-            <li class="header__tab">Shampoo</li>
-            <li class="header__tab">Body Lotion</li>
-            <li class="header__tab">GRID</li>
-            <li class="header__tab">Brush</li>
-            <li class="header__tab">Soap</li>
-            <li class="header__tab">Towel</li>
-            <li class="header__tab">👩🏻‍🔧</li>
-            <li class="header__tab">🛍️</li>
-          </ul>
-        </nav>
-
-        <!-- breadcrumb : 해당 화면까지 오기 위해 거쳐온 모든 페이지 -->
-        <div class="header__breadcrumbs">
-          <span class="header__crumb">Home /</span>
-          <span class="header__crumb">Catalog /</span>
-          <span class="header__crumb">Shop /</span>
-          <span class="header__crumb">Shampoo</span>
-        </div>
-      </header>
-
-      <section class="product">
-        <div class="product__img">
-          <img src="https://source.unsplash.com/random" class="item__photo" />
-        </div>
-        <div class="product__info">
-          <div class="product__header">
-            <span class="product__category">Hand Soap</span>
-            <h1 class="product__title">Shampoo for Hair</h1>
-            <div class="product__add-to-cart">
-              <div class="product__qty">
-                <span class="product__minus">-</span>
-                <span class="product__total-qty">1</span>
-                <span class="product__plus">+</span>
-              </div>
-              <span class="product__price">$11,89</span>
+    <header class="header">
+      <nav class="header__nav">
+        <ul>
+          <li class="header__tab">🔥</li>
+          <li class="header__tab">Best Sellers</li>
+          <li class="header__tab">Hand Soap</li>
+          <li class="header__tab">Shampoo</li>
+          <li class="header__tab">Body Lotion</li>
+          <li class="header__tab">Grid</li>
+          <li class="header__tab">Brush</li>
+          <li class="header__tab">Soap</li>
+          <li class="header__tab">Towel</li>
+          <li class="header__tab">👩🏻‍🔧</li>
+          <li class="header__tab">🛍️</li>
+        </ul>
+      </nav>
+      <div class="header__breadcrumbs">
+        <span class="header__crumb">Home /</span>
+        <span class="header__crumb">Catalog /</span>
+        <span class="header__crumb">Shop /</span>
+        <span class="header__crumb">Shampoo</span>
+      </div>
+    </header>
+    <section class="product">
+      <div class="product__img"></div>
+      <!-- img 태그를 사용하는 대신 product__img에 background-image속성을 사용 -->
+      <!-- 이렇게 하면 설정할 수 있는게 더 많아짐. -->
+      <div class="product__info">
+        <div class="product__header">
+          <span class="product__category">Hand Soap</span>
+          <h1 class="product__title">Shampoo for Hair</h1>
+          <div class="product__add-to-cart">
+            <div class="product__qty">
+              <span class="product__minus">-</span>
+              <span class="product__total-qty">1</span>
+              <span class="product__plus">+</span>
             </div>
-          </div>
-          <div class="product__footer">
-            <div class="product__description">
-              <span>Feminine fioral breeke.</span>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-                quam eaque deserunt. Ullam, dignissimos corrupti officia
-                voluptatum facilis iusto accusamus! Dolorum excepturi quae
-                placeat quasi ex magni assumenda ullam blanditiis.
-              </p>
-            </div>
-            <div class="product__faq">
-              <div class="product__question">How to use<span>+</span></div>
-              <div class="product__question">Ingredients<span>+</span></div>
-              <div class="product__question">Shipping<span>+</span></div>
-            </div>
+            <span class="product__price">$11,89</span>
           </div>
         </div>
-      </section>
-    </div>
+        <div class="product__footer">
+          <div class="product__description">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+              quam eaque deserunt. Ullam, dignissimos corrupti officia
+              voluptatum facilis iusto accusamus! Dolorum excepturi quae placeat
+              quasi ex magni assumenda ullam blanditiis.
+            </p>
+          </div>
+          <div class="product__faq">
+            <div class="product__question">How to use<span>+</span></div>
+            <div class="product__question">Ingredients<span>+</span></div>
+            <div class="product__question">Shipping<span>+</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
