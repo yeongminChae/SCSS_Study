@@ -1,68 +1,73 @@
 @import "./reset.scss";
 
-$bg: #dde1d3;
-$blue: #00a0c8;
-$red: #d03022;
-$burntRed: #573533;
-
 body {
-  background-color: black;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.poster {
-  width: 37%;
-  height: 100%;
   display: grid;
-  background-color: $bg;
-  padding: 20px;
-  box-sizing: border-box;
-  grid-template-columns: 60px 1fr 60px;
-  grid-template-rows: 60px 1.2fr 60px 1fr 60px 1.2fr 60px;
-
-  .top-left,
-  .top-right,
-  .top-top,
-  .center-bottom {
-    background-color: $blue;
-  }
-
-  .center-top,
-  .bottom-left,
-  .bottom-right,
-  .bottom-bottom {
-    background-color: $red;
-  }
-
-  .center-left,
-  .center-right {
-    background-color: $burntRed;
-  }
-
-  .top-left,
-  .top-right,
-  .bottom-left,
-  .bottom-right {
-    grid-row: span 2;
-  }
-
-  .center-left,
-  .center-right {
-    grid-row: span 3;
-  }
-
-  h1 {
-    font-size: 70px;
-  }
-  > div {
+  height: 100vh;
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-columns: 50px 1fr 50px;
+  .bar {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 10px;
-    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: uppercase;
+    &:first-child,
+    &:last-child {
+      grid-column: span 3;
+    }
+    &:nth-child(2) span {
+      transform: rotateZ(-90deg);
+    }
+    &:nth-child(4) span {
+      transform: rotateZ(90deg);
+    }
+  }
+  .main {
+    overflow-y: scroll;
+    height: 100%;
+    padding: 0px 30px 30px 30px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    .nav ul {
+      display: grid;
+      .main__nav-item {
+        padding: 15px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 22px;
+        font-weight: 600;
+        border-bottom: 2px solid black;
+      }
+    }
+  }
+  .filter {
+    margin: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 600;
+    .filter__types {
+      display: flex;
+      gap: 10px;
+      color: grey;
+    }
+    .filter__name--selected {
+      color: black;
+    }
+  }
+  .projects {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+    .project {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-weight: 600;
+      .project__img {
+        width: 100%;
+      }
+    }
   }
 }
