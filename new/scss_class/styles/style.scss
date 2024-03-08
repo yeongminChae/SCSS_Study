@@ -4,69 +4,78 @@ body {
   height: 100vh;
   width: 100%;
   background-color: white;
+  overflow: hidden;
 }
 
 main {
-  width: 92%;
+  width: 100%;
   height: 100%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
 
-  div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  h1 {
+    font-size: 5.75rem;
+  }
 
-    span {
-      font-size: 5rem;
-    }
+  .grid__box {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    grid-template-rows: repeat(2, 1fr);
 
-    &:nth-child(1) {
-      background-color: #d9e7de;
-      color: #f44508;
-    }
-    &:nth-child(2) {
-      background-color: #008a69;
-      color: white;
-    }
-    &:nth-child(3) {
-      background-color: #f44508;
-      color: white;
-    }
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      padding: 1.5rem 0rem 1.5rem 0rem;
 
-    &:nth-child(4) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
+      &:nth-child(2),
+      &:nth-child(4),
+      &:nth-child(9),
+      &:nth-child(11) {
+        background-image: url("https://source.unsplash.com/random");
+        object-fit: cover;
+      }
 
-      div {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      &:nth-child(1) {
+        background-color: #bfbda7;
+      }
+      &:nth-child(3) {
+        background-color: #fd4815;
+      }
+      &:nth-child(5) {
+        background-color: #847f96;
+      }
+      &:nth-child(6) {
+        background-color: #d1ff71;
+      }
+      &:nth-child(7) {
+        background-color: #983433;
+      }
+      &:nth-child(8) {
+        background-color: #39a9f9;
+      }
+      &:nth-child(10) {
+        background-color: #41907a;
+      }
+      &:nth-child(12) {
+        background-color: #e3c4e5;
+      }
 
-        span {
-          font-size: 2.5rem;
-        }
-
+      span {
         &:nth-child(1) {
-          background-color: #f7acc4;
-          color: #f44508;
+          font-size: 1.25rem;
+          padding: 0rem 3rem 0rem 3rem;
         }
         &:nth-child(2) {
-          background-color: #5f5fa9;
-          color: white;
-        }
-        &:nth-child(3) {
-          background-color: #fec027;
-          color: #f44508;
-        }
-        &:nth-child(4) {
-          background-color: #f87374;
-          color: white;
+          font-size: 0.65rem;
+          font-weight: 500;
+          padding: 0rem 2rem 0rem 2rem;
         }
       }
     }
