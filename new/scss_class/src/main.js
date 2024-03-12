@@ -11,4 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     spanText.innerHTML = space;
   });
+
+  const verticalText = document.querySelectorAll(".verticalText");
+
+  verticalText.forEach((verticalText) => {
+    let verText = verticalText.innerText;
+    let verSpace = "";
+
+    for (let i of verText) {
+      verSpace += `<span>${i}</span>`;
+    }
+
+    verticalText.innerHTML = verSpace;
+  });
 });
