@@ -1,27 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const spanTexts = document.querySelectorAll(".spanText");
+  const moreBtn = document.querySelector(".more-btn");
+  const cancelBtn = document.querySelector(".x-btn");
+  let ulElement = document.querySelector(".header__ul");
+  let title = document.querySelector(".title");
 
-  spanTexts.forEach((spanText) => {
-    let text = spanText.innerText;
-    let space = "";
-
-    for (let i of text) {
-      space += `<span>${i}</span>`;
-    }
-
-    spanText.innerHTML = space;
+  moreBtn.addEventListener("click", () => {
+    ulElement.style.display = "flex";
+    title.style.display = "none";
   });
 
-  const verticalText = document.querySelectorAll(".verticalText");
-
-  verticalText.forEach((verticalText) => {
-    let verText = verticalText.innerText;
-    let verSpace = "";
-
-    for (let i of verText) {
-      verSpace += `<span>${i}</span>`;
-    }
-
-    verticalText.innerHTML = verSpace;
+  cancelBtn.addEventListener("click", () => {
+    ulElement.style.display = "none";
+    title.style.display = "grid";
   });
+
+  const viewPort = () => {
+    const width = window.innerWidth;
+
+    if (width >= 768 && width < 1024) {
+      ulElement.style.display = "flex";
+      title.style.display = "none";
+    } else if (width < 768) {
+      ulElement.style.display = "none";
+      title.style.display = "grid";
+    }
+  };
+  window.addEventListener("resize", viewPort);
+  viewPort();
 });
